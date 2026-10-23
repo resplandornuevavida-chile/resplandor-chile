@@ -2,27 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Comunidad Resplandor. Un espacio de acompañamiento y recuperación en Isla de Maipo, Chile.">
-  <title>Resplandor | Comunidad Terapéutica</title>
+  <meta name="description" content="Conoce Comunidad Resplandor y contacta con nuestro equipo para solicitar información sobre el proceso de rehabilitación.">
+  <title>Comunidad Resplandor | Un nuevo comienzo</title>
 
   <style>
     :root {
-      --green: #65844b;
-      --green-dark: #405b32;
-      --gold: #d9b74d;
-      --ink: #20251f;
-      --muted: #73786f;
-      --paper: #ffffff;
+      --green: #557747;
+      --green-dark: #354f30;
+      --green-light: #eaf0e5;
+      --ink: #252a23;
+      --muted: #73796f;
+      --paper: #fff;
       --soft: #f6f7f3;
+      --line: #e8ebe4;
       --radius: 22px;
+      --shadow: 0 12px 35px rgba(34, 48, 28, .09);
     }
 
     * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 95px;
     }
 
     body {
@@ -34,106 +37,232 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    body, button, a { -webkit-tap-highlight-color: transparent; }
+
     a { color: inherit; text-decoration: none; }
 
+    button { font: inherit; }
+
+    img, video { max-width: 100%; }
+
+    .container {
+      width: min(1160px, 88%);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -.7px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 14px;
+      font-size: clamp(34px, 5vw, 57px);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .button {
+      min-height: 47px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 21px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .button:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+    }
+
+    .button-outline:hover {
+      background: var(--soft);
+      color: var(--ink);
+    }
+
+    /* CABECERA */
+
     .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(232, 235, 228, .9);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(15px);
+    }
+
+    .header-inner {
+      width: min(1280px, 92%);
       min-height: 78px;
-      padding: 14px 6%;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      border-bottom: 1px solid #eceee8;
-      background: rgba(255,255,255,.96);
+      gap: 24px;
     }
 
     .brand {
+      min-width: 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
     }
 
     .brand-mark {
       width: 43px;
       height: 43px;
-      border-radius: 50%;
+      flex: 0 0 43px;
       display: grid;
       place-items: center;
-      color: white;
+      border-radius: 50%;
       background: var(--green);
-      font-size: 24px;
+      color: white;
+      font-size: 25px;
     }
 
     .brand-name {
-      font-family: Georgia, serif;
+      display: block;
       font-size: 25px;
-      font-weight: 700;
-      letter-spacing: .3px;
     }
 
     .brand-subtitle {
       display: block;
       margin-top: 3px;
       color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.7px;
+      font-size: 9px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
     }
 
-    .header-contact {
-      padding: 12px 19px;
-      border-radius: 30px;
-      background: var(--green);
-      color: white;
-      font-size: 13px;
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a:not(.button) {
+      color: #52584e;
+      font-size: 12px;
       font-weight: 600;
-      transition: background .2s;
     }
 
-    .header-contact:hover { background: var(--green-dark); }
+    .nav a:not(.button):hover { color: var(--green); }
 
-    .section {
-      padding: 42px 0 12px;
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: white;
+      color: var(--ink);
+      font-size: 21px;
+      cursor: pointer;
     }
 
-    .section-heading {
-      padding: 0 6%;
-      margin-bottom: 22px;
+    /* INTRODUCCIÓN Y CARRUSELES */
+
+    .hero {
+      padding-top: 47px;
     }
 
-    .eyebrow {
-      margin: 0 0 9px;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
+    .hero-heading {
+      margin-bottom: 24px;
     }
 
-    h1, h2, p { margin-top: 0; }
+    .hero-heading h1 { max-width: 900px; }
 
-    .section-heading h1,
-    .section-heading h2 {
-      margin-bottom: 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      letter-spacing: -.8px;
-    }
-
-    .section-heading h1 {
-      font-size: clamp(30px, 4vw, 48px);
-    }
-
-    .section-heading h2 {
-      font-size: clamp(27px, 3.2vw, 38px);
-    }
-
-    .section-heading p:last-child {
-      margin-bottom: 0;
+    .hero-heading p:last-child {
       max-width: 650px;
+      margin-bottom: 0;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.8;
+    }
+
+    .carousel-section { padding: 0 0 32px; }
+
+    .carousel-heading {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .carousel-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(24px, 3vw, 31px);
+    }
+
+    .carousel-heading .eyebrow { margin-bottom: 7px; }
+
+    .carousel-controls {
+      display: flex;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .carousel-arrow {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: white;
+      color: var(--ink);
+      font-size: 19px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .carousel-arrow:hover {
+      border-color: var(--green);
+      color: var(--green);
     }
 
     .carousel-viewport {
@@ -141,468 +270,1118 @@
       overflow-x: auto;
       overflow-y: hidden;
       scrollbar-width: none;
-      cursor: grab;
-      touch-action: pan-y;
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
     .carousel-viewport::-webkit-scrollbar { display: none; }
     .carousel-viewport.dragging { cursor: grabbing; }
 
     .carousel-track {
-      display: flex;
       width: max-content;
+      display: flex;
       align-items: center;
-      gap: 18px;
-      padding: 5px 6% 20px;
+      gap: 16px;
+      padding: 5px 5px 19px;
     }
 
     .video-card {
       position: relative;
       flex: 0 0 auto;
-      width: clamp(185px, 23vw, 270px);
+      width: clamp(190px, 23vw, 265px);
       aspect-ratio: 9 / 16;
       overflow: hidden;
       border-radius: var(--radius);
-      background: #20251f;
-      box-shadow: 0 8px 28px rgba(25,35,20,.12);
+      background: #e6e9e1;
+      box-shadow: var(--shadow);
       isolation: isolate;
     }
 
     .video-card video {
-      display: block;
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: cover;
-      background: #20251f;
+      background: #e6e9e1;
+      pointer-events: auto;
     }
 
-    .video-card::after {
+    .video-bottom {
       position: absolute;
-      inset: 45% 0 0;
-      content: "";
+      inset: 48% 0 0;
+      z-index: 1;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 14px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .52));
       pointer-events: none;
-      background: linear-gradient(transparent, rgba(0,0,0,.38));
     }
 
-    .video-control {
-      position: absolute;
-      z-index: 2;
-      right: 12px;
-      bottom: 12px;
+    .video-label {
+      color: white;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .video-sound {
       width: 43px;
       height: 43px;
+      flex: 0 0 43px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(255,255,255,.45);
+      border: 1px solid rgba(255,255,255,.55);
       border-radius: 50%;
       background: rgba(20,25,20,.68);
       color: white;
       font-size: 17px;
       cursor: pointer;
+      pointer-events: auto;
       backdrop-filter: blur(8px);
     }
 
-    .video-hint {
-      position: absolute;
-      z-index: 2;
-      left: 13px;
-      bottom: 21px;
-      max-width: calc(100% - 70px);
-      color: white;
-      font-size: 11px;
-      pointer-events: none;
-    }
-
-    .gallery-section {
-      margin-top: 20px;
-      padding-top: 42px;
-      padding-bottom: 48px;
+    .gallery {
+      margin-top: 8px;
+      padding: 45px 0 35px;
       background: var(--soft);
     }
 
     .image-card {
       flex: 0 0 auto;
-      height: clamp(210px, 28vw, 340px);
+      height: clamp(205px, 29vw, 325px);
       width: auto;
-      max-width: 82vw;
+      max-width: 83vw;
       overflow: hidden;
       border-radius: var(--radius);
-      background: #e8ebe3;
-      box-shadow: 0 7px 24px rgba(25,35,20,.08);
+      background: #e7eae3;
+      box-shadow: 0 8px 25px rgba(34, 48, 28, .07);
     }
 
     .image-card img {
-      display: block;
       width: auto;
       height: 100%;
-      max-width: 82vw;
+      max-width: 83vw;
+      display: block;
       object-fit: contain;
-      user-select: none;
-      -webkit-user-drag: none;
+      pointer-events: none;
     }
 
-    .intro {
-      padding: 66px 6%;
-      text-align: center;
-    }
-
-    .intro h2 {
-      max-width: 760px;
-      margin: 0 auto 18px;
-      font-family: Georgia, serif;
-      font-size: clamp(32px, 4.6vw, 52px);
-      line-height: 1.16;
-      font-weight: 500;
-    }
-
-    .intro p {
-      max-width: 660px;
-      margin: 0 auto;
+    .carousel-note {
+      margin: 0;
+      padding-top: 1px;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 11px;
+    }
+
+    /* SECCIONES INSTITUCIONALES */
+
+    .section {
+      padding: 83px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .muted { font-size: 15px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 15px;
       line-height: 1.9;
     }
 
-    .contact {
-      padding: 52px 6%;
-      text-align: center;
-      background: #f1f3ed;
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
     }
 
-    .contact h2 {
-      margin-bottom: 12px;
+    .principle {
+      padding: 23px 19px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+    }
+
+    .principle-number {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--green);
       font-family: Georgia, serif;
-      font-size: clamp(30px, 4vw, 42px);
-      font-weight: 500;
+      font-size: 23px;
     }
 
-    .contact p {
+    .principle h3 { font-size: 15px; }
+
+    .principle p {
+      margin-bottom: 0;
       color: var(--muted);
+      font-size: 12px;
       line-height: 1.7;
     }
 
-    .whatsapp-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 8px;
-      padding: 15px 24px;
-      border-radius: 32px;
-      color: white;
-      background: var(--green);
-      font-weight: 650;
-      font-size: 14px;
-      transition: transform .2s, background .2s;
+    .soft-section { background: var(--soft); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
     }
 
-    .whatsapp-button:hover {
-      transform: translateY(-2px);
-      background: var(--green-dark);
+    .feature-card {
+      padding: 27px 23px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: white;
     }
 
-    footer {
-      padding: 25px 6%;
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+      margin-bottom: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 20px;
+    }
+
+    .feature-card h3 { font-size: 16px; }
+
+    .feature-card p {
+      margin-bottom: 0;
       color: var(--muted);
-      text-align: center;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 1.8;
     }
 
-    @media (max-width: 600px) {
-      .header {
-        min-height: 68px;
-        padding: 12px 5%;
+    .team-placeholder {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: white;
+    }
+
+    .team-placeholder p {
+      max-width: 720px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+      counter-reset: steps;
+    }
+
+    .step {
+      padding: 26px 23px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      counter-increment: steps;
+    }
+
+    .step::before {
+      content: "0" counter(steps);
+      display: block;
+      margin-bottom: 19px;
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 25px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-list details {
+      padding: 19px 21px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+    }
+
+    .faq-list summary {
+      position: relative;
+      padding-right: 20px;
+      font-size: 14px;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    .faq-list details p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* CONTACTO */
+
+    .contact {
+      padding: 74px 0;
+      background: #edf1e8;
+      text-align: center;
+    }
+
+    .contact-inner {
+      width: min(720px, 88%);
+      margin: auto;
+    }
+
+    .contact h2 { margin-bottom: 15px; }
+
+    .contact p:not(.eyebrow) {
+      margin-bottom: 23px;
+      color: #666e60;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .contact .button { min-height: 52px; padding-inline: 25px; }
+
+    footer {
+      padding: 29px 5% 90px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .footer-brand {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 120;
+      min-height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 19px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 40px;
+      background: #287d49;
+      color: white;
+      box-shadow: 0 7px 25px rgba(0,0,0,.18);
+      font-size: 13px;
+      font-weight: 750;
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover { transform: translateY(-3px); }
+
+    .whatsapp-symbol { font-size: 20px; }
+
+    @media (max-width: 940px) {
+      .nav { gap: 13px; }
+      .nav a:not(.button) { font-size: 11px; }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner { min-height: 69px; }
+      .menu-toggle { display: grid; place-items: center; }
+
+      .nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        padding: 16px 6% 22px;
+        border-bottom: 1px solid var(--line);
+        background: white;
       }
 
-      .brand-mark {
-        width: 38px;
-        height: 38px;
+      .nav.open { display: flex; flex-direction: column; gap: 0; }
+
+      .nav a:not(.button) {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
       }
 
-      .brand-name { font-size: 22px; }
-      .brand-subtitle { font-size: 8px; }
+      .nav .button { margin-top: 14px; }
 
-      .header-contact {
-        padding: 11px 13px;
-        font-size: 12px;
-      }
+      .hero { padding-top: 34px; }
+      .container { width: 90%; }
+      .section { padding: 60px 0; }
 
-      .section { padding-top: 31px; }
-      .section-heading { padding: 0 5%; margin-bottom: 16px; }
-
-      .carousel-track {
-        gap: 13px;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .video-card { width: 68vw; }
+      .about-grid { grid-template-columns: 1fr; gap: 20px; }
+      .steps { grid-template-columns: 1fr; }
+      .video-card { width: min(72vw, 275px); }
+      .carousel-track { gap: 13px; }
+      .gallery { padding-top: 35px; }
 
       .image-card {
-        height: 250px;
+        height: 245px;
         max-width: 86vw;
       }
 
       .image-card img { max-width: 86vw; }
-      .intro { padding: 48px 7%; }
-      .gallery-section { padding-top: 35px; }
+
+      .carousel-controls { gap: 5px; }
+      .carousel-arrow { width: 36px; height: 36px; }
+
+      .whatsapp-float {
+        right: 13px;
+        bottom: 13px;
+        min-height: 49px;
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .brand-name { font-size: 22px; }
+      .brand-mark { width: 38px; height: 38px; flex-basis: 38px; }
+      .brand-subtitle { font-size: 8px; letter-spacing: 1px; }
+      .principles, .feature-grid { grid-template-columns: 1fr; }
+      .carousel-heading { align-items: center; }
+      .carousel-heading h2 { font-size: 25px; }
+      .carousel-note { max-width: 190px; line-height: 1.6; }
+      .team-placeholder { padding: 23px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
   <header class="header">
-    <a class="brand" href="#" aria-label="Resplandor, inicio">
-      <span class="brand-mark" aria-hidden="true">☼</span>
-      <span>
-        <span class="brand-name">Resplandor</span>
-        <span class="brand-subtitle">Comunidad Terapéutica</span>
-      </span>
-    </a>
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Comunidad Resplandor, inicio">
+        <span class="brand-mark" aria-hidden="true">☼</span>
+        <span>
+          <span class="brand-name">Resplandor</span>
+          <span class="brand-subtitle">Comunidad terapéutica</span>
+        </span>
+      </a>
 
-    <a class="header-contact"
-       href="https://wa.me/56966211459"
-       target="_blank" rel="noopener">
-      Contactar
-    </a>
+      <button class="menu-toggle" id="menu-toggle"
+              aria-label="Abrir menú" aria-expanded="false"
+              aria-controls="main-nav">☰</button>
+
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#filosofia">Filosofía</a>
+        <a href="#programa">Rehabilitación</a>
+        <a href="#equipo">Profesionales</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a class="button" href="https://wa.me/56966211459"
+           target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="section" aria-labelledby="videos-title">
-      <div class="section-heading">
-        <p class="eyebrow">Conoce Resplandor</p>
-        <h1 id="videos-title">Un espacio para comenzar de nuevo</h1>
-        <p>Conoce nuestra comunidad a través de sus videos.</p>
+    <!-- 1. VIDEOS -->
+    <section class="hero container" id="inicio">
+      <div class="hero-heading">
+        <p class="eyebrow">Comunidad Resplandor</p>
+        <h1>Un espacio para comenzar de nuevo.</h1>
+        <p>
+          Conoce nuestra comunidad y encuentra un primer paso
+          para solicitar orientación.
+        </p>
       </div>
 
-      <div class="carousel-viewport" id="videos-viewport">
-        <div class="carousel-track" id="videos-track">
-          <article class="video-card">
-            <video src="video%201.mp4" autoplay muted loop playsinline preload="metadata"
-                   aria-label="Video 1 de Resplandor"></video>
-            <span class="video-hint">Activar sonido</span>
-            <button class="video-control" aria-label="Activar sonido del video">🔇</button>
-          </article>
+      <section class="carousel-section" aria-labelledby="videos-title">
+        <div class="carousel-heading">
+          <div>
+            <p class="eyebrow">Historias en movimiento</p>
+            <h2 id="videos-title">Conoce Resplandor</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" data-scroll="videos" data-direction="-1"
+                    aria-label="Ver videos anteriores">‹</button>
+            <button class="carousel-arrow" data-scroll="videos" data-direction="1"
+                    aria-label="Ver más videos">›</button>
+          </div>
+        </div>
 
-          <article class="video-card">
-            <video src="video%202.mp4" autoplay muted loop playsinline preload="metadata"
-                   aria-label="Video 2 de Resplandor"></video>
-            <span class="video-hint">Activar sonido</span>
-            <button class="video-control" aria-label="Activar sonido del video">🔇</button>
-          </article>
+        <div class="carousel-viewport" id="videos-viewport">
+          <div class="carousel-track" id="videos-track">
+            <article class="video-card">
+              <video src="video%201.mp4" muted loop playsinline preload="metadata"
+                     aria-label="Video 1 de Resplandor"></video>
+              <div class="video-bottom">
+                <span class="video-label">Comunidad Resplandor</span>
+                <button class="video-sound" aria-label="Activar sonido">▶</button>
+              </div>
+            </article>
 
-          <article class="video-card">
-            <video src="video%203.mp4" autoplay muted loop playsinline preload="metadata"
-                   aria-label="Video 3 de Resplandor"></video>
-            <span class="video-hint">Activar sonido</span>
-            <button class="video-control" aria-label="Activar sonido del video">🔇</button>
+            <article class="video-card">
+              <video src="video%202.mp4" muted loop playsinline preload="metadata"
+                     aria-label="Video 2 de Resplandor"></video>
+              <div class="video-bottom">
+                <span class="video-label">Conoce nuestra comunidad</span>
+                <button class="video-sound" aria-label="Activar sonido">▶</button>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <video src="video%203.mp4" muted loop playsinline preload="metadata"
+                     aria-label="Video 3 de Resplandor"></video>
+              <div class="video-bottom">
+                <span class="video-label">Un nuevo comienzo</span>
+                <button class="video-sound" aria-label="Activar sonido">▶</button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="carousel-note">Desliza con el dedo o arrastra para explorar.</p>
+      </section>
+    </section>
+
+    <!-- 2. IMÁGENES -->
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="carousel-heading">
+          <div>
+            <p class="eyebrow">Nuestros espacios</p>
+            <h2 id="gallery-title">Un vistazo a Resplandor</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" data-scroll="images" data-direction="-1"
+                    aria-label="Ver imágenes anteriores">‹</button>
+            <button class="carousel-arrow" data-scroll="images" data-direction="1"
+                    aria-label="Ver más imágenes">›</button>
+          </div>
+        </div>
+
+        <div class="carousel-viewport" id="images-viewport">
+          <div class="carousel-track" id="images-track">
+            <div class="image-card"><img src="imagen%201.jpeg" alt="Imagen 1 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%202.jpeg" alt="Imagen 2 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%203.jpeg" alt="Imagen 3 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%204.jpeg" alt="Imagen 4 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%205.jpeg" alt="Imagen 5 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%206.jpeg" alt="Imagen 6 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%207.jpeg" alt="Imagen 7 de Resplandor" draggable="false"></div>
+            <div class="image-card"><img src="imagen%208.jpeg" alt="Imagen 8 de Resplandor" draggable="false"></div>
+          </div>
+        </div>
+        <p class="carousel-note">Las fotografías conservan sus proporciones originales.</p>
+      </div>
+    </section>
+
+    <!-- 3. NOSOTROS -->
+    <section class="section container" id="nosotros">
+      <div class="section-heading">
+        <p class="eyebrow">Quiénes somos</p>
+        <h2>Conoce nuestra comunidad</h2>
+        <p class="muted">
+          Un espacio dedicado al acompañamiento de personas que buscan
+          iniciar un proceso de recuperación y construir nuevas oportunidades.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <h3>Un primer paso puede abrir nuevas posibilidades.</h3>
+          <p>
+            Cada proceso es personal. Por eso, conocer las necesidades de
+            cada persona y entregar orientación clara son pasos importantes
+            para comenzar una conversación.
+          </p>
+          <p>
+            Si deseas conocer nuestra comunidad, el proceso de ingreso o
+            los servicios disponibles, puedes comunicarte directamente
+            con Resplandor.
+          </p>
+          <a class="button" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20conocer%20la%20Comunidad%20Resplandor."
+             target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+
+        <div class="principles" aria-label="Principios orientadores">
+          <article class="principle">
+            <span class="principle-number">01</span>
+            <h3>Dignidad</h3>
+            <p>Reconocer el valor de cada persona.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-number">02</span>
+            <h3>Respeto</h3>
+            <p>Escuchar y acompañar sin prejuicios.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-number">03</span>
+            <h3>Compromiso</h3>
+            <p>Avanzar paso a paso en el proceso personal.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-number">04</span>
+            <h3>Esperanza</h3>
+            <p>Reconocer nuevas posibilidades de cambio.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section gallery-section" aria-labelledby="gallery-title">
+    <!-- 4. FILOSOFÍA -->
+    <section class="section soft-section" id="filosofia">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Nuestra filosofía</p>
+          <h2>Un enfoque centrado en la persona</h2>
+          <p class="muted">
+            La recuperación merece un acompañamiento respetuoso,
+            una comunicación honesta y una mirada integral de cada situación.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◇</div>
+            <h3>Respeto por cada historia</h3>
+            <p>
+              Cada persona tiene experiencias, necesidades y circunstancias
+              propias que merecen ser escuchadas.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">○</div>
+            <h3>Acompañamiento humano</h3>
+            <p>
+              La comunicación y la orientación son importantes para conocer
+              las alternativas disponibles.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">↗</div>
+            <h3>Un proceso personal</h3>
+            <p>
+              El camino de recuperación requiere considerar las necesidades
+              y el contexto de cada persona.
+            </p>
+          </article>
+        </div>
+
+        <p class="muted" style="font-size:12px;margin-top:18px">
+          Estos principios son una presentación general y deben validarse
+          con la filosofía institucional oficial del centro.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. REHABILITACIÓN -->
+    <section class="section container" id="programa">
       <div class="section-heading">
-        <p class="eyebrow">Nuestra comunidad</p>
-        <h2 id="gallery-title">Conoce nuestros espacios</h2>
-        <p>Desliza las imágenes para conocer más.</p>
+        <p class="eyebrow">Proceso de recuperación</p>
+        <h2>Recibe orientación para dar el primer paso</h2>
+        <p class="muted">
+          Comunícate con Resplandor para conocer el modelo de atención,
+          los servicios disponibles y los requisitos de ingreso.
+        </p>
       </div>
 
-      <div class="carousel-viewport" id="images-viewport">
-        <div class="carousel-track" id="images-track">
-          <div class="image-card"><img src="imagen%201.jpeg" alt="Resplandor, imagen 1" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%202.jpeg" alt="Resplandor, imagen 2" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%203.jpeg" alt="Resplandor, imagen 3" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%204.jpeg" alt="Resplandor, imagen 4" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%205.jpeg" alt="Resplandor, imagen 5" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%206.jpeg" alt="Resplandor, imagen 6" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%207.jpeg" alt="Resplandor, imagen 7" loading="lazy"></div>
-          <div class="image-card"><img src="imagen%208.jpeg" alt="Resplandor, imagen 8" loading="lazy"></div>
+      <div class="steps">
+        <article class="step">
+          <h3>Primera consulta</h3>
+          <p>
+            Cuéntanos qué información necesitas y qué situación deseas
+            consultar.
+          </p>
+        </article>
+        <article class="step">
+          <h3>Orientación inicial</h3>
+          <p>
+            Consulta las alternativas de atención, las condiciones
+            del programa y los pasos correspondientes.
+          </p>
+        </article>
+        <article class="step">
+          <h3>Información de ingreso</h3>
+          <p>
+            Solicita detalles sobre requisitos, disponibilidad y proceso
+            de admisión.
+          </p>
+        </article>
+      </div>
+
+      <div style="margin-top:27px">
+        <a class="button" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20proceso%20de%20ingreso."
+           target="_blank" rel="noopener">Consultar proceso de ingreso</a>
+      </div>
+    </section>
+
+    <!-- 6. EQUIPO PROFESIONAL -->
+    <section class="section soft-section" id="equipo">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Nuestro equipo</p>
+          <h2>Profesionales y acompañamiento</h2>
+          <p class="muted">
+            Conoce a las personas responsables de acompañar el trabajo
+            de la comunidad.
+          </p>
+        </div>
+
+        <div class="team-placeholder">
+          <h3>Información del equipo profesional</h3>
+          <p>
+            Esta sección está preparada para incorporar los nombres,
+            fotografías, cargos, títulos y credenciales del equipo de
+            Resplandor. Los datos se publicarán una vez que hayan sido
+            confirmados por el centro.
+          </p>
+          <div style="margin-top:21px">
+            <a class="button" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20equipo%20profesional."
+               target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="intro">
-      <p class="eyebrow">Comunidad Resplandor</p>
-      <h2>La recuperación comienza con un primer paso.</h2>
-      <p>
-        Desde 2015, Resplandor busca ofrecer un espacio de acompañamiento
-        a personas que enfrentan dificultades relacionadas con el consumo
-        de alcohol y otras drogas, promoviendo la dignidad, el respeto
-        y la construcción de nuevas oportunidades.
-      </p>
+    <!-- 7. FAMILIAS -->
+    <section class="section container" id="familias">
+      <div class="section-heading">
+        <p class="eyebrow">Orientación para familias</p>
+        <h2>También puedes consultar por un ser querido</h2>
+        <p class="muted">
+          Si buscas información para ayudar a un familiar, puedes
+          comunicarte con Resplandor y consultar cómo recibir orientación
+          sobre los próximos pasos.
+        </p>
+      </div>
+
+      <a class="button"
+         href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20orientaci%C3%B3n%20para%20ayudar%20a%20un%20familiar."
+         target="_blank" rel="noopener">Solicitar orientación</a>
     </section>
 
+    <!-- 8. PREGUNTAS FRECUENTES -->
+    <section class="section soft-section" id="preguntas">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Información para comenzar</h2>
+          <p class="muted">
+            Para obtener respuestas específicas sobre el funcionamiento
+            del centro, consulta directamente con Resplandor.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>¿Cómo puedo solicitar información?</summary>
+            <p>
+              Puedes escribir directamente al WhatsApp oficial de Resplandor
+              utilizando cualquiera de los botones de contacto de esta página.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Cómo puedo consultar por el ingreso?</summary>
+            <p>
+              Comunícate con el centro para solicitar información sobre
+              los requisitos, las condiciones y los pasos de admisión.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Qué tratamientos y servicios ofrece el centro?</summary>
+            <p>
+              Solicita al equipo la información actualizada sobre los
+              servicios y las modalidades de atención disponibles.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Puedo consultar por un familiar?</summary>
+            <p>
+              Sí. Puedes contactar al centro para consultar qué orientación
+              pueden proporcionar a familiares y personas cercanas.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Cuáles son los costos y la duración del programa?</summary>
+            <p>
+              Estos datos deben confirmarse directamente con Resplandor,
+              ya que pueden depender del programa y de las circunstancias
+              de cada caso.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACTO -->
     <section class="contact" id="contacto">
-      <p class="eyebrow">Estamos para orientarte</p>
-      <h2>Hablemos</h2>
-      <p>Comunícate con Resplandor para solicitar información.</p>
-      <a class="whatsapp-button"
-         href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20Resplandor."
-         target="_blank" rel="noopener">
-        Consultar por WhatsApp
-      </a>
+      <div class="contact-inner">
+        <p class="eyebrow">Estamos para orientarte</p>
+        <h2>El primer paso es conversar.</h2>
+        <p>
+          Contacta con Comunidad Resplandor para solicitar información
+          sobre el centro y conocer los pasos a seguir.
+        </p>
+        <a class="button"
+           href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20Comunidad%20Resplandor."
+           target="_blank" rel="noopener">
+          <span aria-hidden="true">◉</span> Hablar por WhatsApp
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <strong>Comunidad Resplandor</strong><br>
-    San Martirian #657, Las Mercedes, Isla de Maipo, Chile<br>
-    © <span id="year"></span> Resplandor. Todos los derechos reservados.
+    <div class="footer-brand">Comunidad Resplandor</div>
+    <p>
+      San Martirian #657, Las Mercedes, Isla de Maipo, Chile
+    </p>
+    <p>
+      Teléfono y WhatsApp:
+      <a href="https://wa.me/56966211459">+56 9 6621 1459</a>
+    </p>
+    <p>© <span id="year"></span> Comunidad Resplandor.</p>
   </footer>
 
+  <a class="whatsapp-float"
+     href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20Resplandor."
+     target="_blank" rel="noopener"
+     aria-label="Contactar con Resplandor por WhatsApp">
+    <span class="whatsapp-symbol" aria-hidden="true">◉</span>
+    WhatsApp
+  </a>
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    // Los carruseles avanzan continuamente y permiten arrastrar o deslizar.
-    function setupCarousel(viewportId, trackId, speed) {
-      const viewport = document.getElementById(viewportId);
-      const track = document.getElementById(trackId);
+    // Menú móvil
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainNav = document.getElementById("main-nav");
 
-      if (!viewport || !track || !track.children.length) return;
+    menuToggle.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      menuToggle.textContent = open ? "×" : "☰";
+    });
 
-      const originals = Array.from(track.children);
-      originals.forEach(item => {
-        const clone = item.cloneNode(true);
-        clone.setAttribute("aria-hidden", "true");
-
-        clone.querySelectorAll("video").forEach(video => {
-          video.muted = true;
-          video.setAttribute("muted", "");
-          video.setAttribute("playsinline", "");
-        });
-
-        track.appendChild(clone);
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+        menuToggle.textContent = "☰";
       });
+    });
 
-      let loopWidth = 0;
-      let paused = false;
-      let dragging = false;
+    // Carruseles con seguimiento sensible del gesto e inercia.
+    // Se evita clonar elementos: no se crean duplicados visibles.
+    function setupCarousel(id, options = {}) {
+      const viewport = document.getElementById(id);
+      if (!viewport) return;
+
+      const track = viewport.querySelector(".carousel-track");
+      if (!track) return;
+
+      let pointerDown = false;
+      let pointerId = null;
       let startX = 0;
       let startScroll = 0;
+      let lastX = 0;
       let lastTime = 0;
-      let animationFrame = 0;
+      let velocity = 0;
+      let inertiaFrame = 0;
+      let suppressClickUntil = 0;
+      let moved = false;
+      let loopWidth = 0;
+      let loopEnabled = false;
+      let loopOffset = 0;
+      let lastAnimationTime = 0;
 
-      function measure() {
-        loopWidth = track.scrollWidth / 2;
+      const speedMultiplier = options.speedMultiplier || 1.8;
+      const autoSpeed = options.autoSpeed || 0.25;
+      const prefersReducedMotion =
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function getLoopWidth() {
+        // La repetición solo se habilita cuando la pista tiene
+        // contenido suficiente para producir un bucle sin espacios.
+        return track.scrollWidth;
       }
 
-      measure();
-      window.addEventListener("resize", measure);
+      function measure() {
+        loopWidth = getLoopWidth();
+        loopEnabled = false;
+      }
+
+      function stopInertia() {
+        if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
+        inertiaFrame = 0;
+      }
+
+      function normalizeLoop() {
+        if (!loopEnabled || loopWidth <= 0) return;
+        const baseWidth = loopWidth;
+        if (viewport.scrollLeft >= baseWidth) {
+          viewport.scrollLeft -= baseWidth;
+        } else if (viewport.scrollLeft < 0) {
+          viewport.scrollLeft += baseWidth;
+        }
+      }
 
       function animate(time) {
-        if (lastTime && !paused && !dragging && loopWidth > 0) {
-          const delta = Math.min(time - lastTime, 40);
-          viewport.scrollLeft += speed * delta / 16.67;
+        if (!lastAnimationTime) lastAnimationTime = time;
+        const dt = Math.min(time - lastAnimationTime, 32);
+        lastAnimationTime = time;
 
-          if (viewport.scrollLeft >= loopWidth) {
-            viewport.scrollLeft -= loopWidth;
-          } else if (viewport.scrollLeft < 0) {
-            viewport.scrollLeft += loopWidth;
+        if (!prefersReducedMotion && !pointerDown &&
+            !inertiaFrame && !document.hidden) {
+          if (autoSpeed && !viewport.matches(":hover")) {
+            viewport.scrollLeft += autoSpeed * dt;
+            normalizeLoop();
           }
         }
 
-        lastTime = time;
-        animationFrame = requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
       }
 
-      animationFrame = requestAnimationFrame(animate);
+      // Duplicar la pista únicamente si hay espacio suficiente
+      // para evitar un hueco visible en el desplazamiento continuo.
+      function initializeLoop() {
+        if (loopEnabled || prefersReducedMotion) return;
+
+        const originalWidth = track.scrollWidth;
+        if (originalWidth < viewport.clientWidth * 1.5) return;
+
+        const originals = Array.from(track.children);
+        if (!originals.length) return;
+
+        // El contenido duplicado es una copia técnica para el loop;
+        // las fotografías originales siguen apareciendo una vez
+        // por cada ciclo de la pista.
+        originals.forEach(item => {
+          const clone = item.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          clone.querySelectorAll("video").forEach(video => {
+            video.pause();
+            video.removeAttribute("src");
+          });
+          clone.querySelectorAll("button").forEach(button => {
+            button.remove();
+          });
+          track.appendChild(clone);
+        });
+
+        loopWidth = originalWidth;
+        loopEnabled = true;
+      }
+
+      function startInertia() {
+        stopInertia();
+
+        if (Math.abs(velocity) < 0.15) return;
+
+        let v = velocity * speedMultiplier;
+        let previousTime = 0;
+
+        function frame(time) {
+          if (!previousTime) previousTime = time;
+          const dt = Math.min(time - previousTime, 32);
+          previousTime = time;
+
+          viewport.scrollLeft -= v * dt;
+          normalizeLoop();
+
+          v *= Math.pow(0.93, dt / 16.67);
+
+          if (Math.abs(v) > 0.035 && !pointerDown) {
+            inertiaFrame = requestAnimationFrame(frame);
+          } else {
+            inertiaFrame = 0;
+          }
+        }
+
+        inertiaFrame = requestAnimationFrame(frame);
+      }
 
       viewport.addEventListener("pointerdown", event => {
         if (event.pointerType === "mouse" && event.button !== 0) return;
-        dragging = true;
+
+        stopInertia();
+        pointerDown = true;
+        pointerId = event.pointerId;
         startX = event.clientX;
         startScroll = viewport.scrollLeft;
-        viewport.classList.add("dragging");
-        viewport.setPointerCapture?.(event.pointerId);
+        lastX = event.clientX;
+        lastTime = performance.now();
+        velocity = 0;
+        moved = false;
       });
 
       viewport.addEventListener("pointermove", event => {
-        if (!dragging) return;
-        const distance = event.clientX - startX;
-        viewport.scrollLeft = startScroll - distance;
+        if (!pointerDown || event.pointerId !== pointerId) return;
 
-        if (viewport.scrollLeft >= loopWidth) {
-          viewport.scrollLeft -= loopWidth;
-          startScroll -= loopWidth;
-        } else if (viewport.scrollLeft < 0) {
-          viewport.scrollLeft += loopWidth;
-          startScroll += loopWidth;
-        }
+        const now = performance.now();
+        const dx = event.clientX - startX;
+
+        if (Math.abs(dx) > 5) moved = true;
+
+        // Se mide la velocidad real del gesto. El desplazamiento
+        // sigue al dedo y no se limita a pequeños pasos fijos.
+        viewport.scrollLeft = startScroll - dx;
+        const elapsed = Math.max(1, now - lastTime);
+        velocity = (event.clientX - lastX) / elapsed;
+
+        lastX = event.clientX;
+        lastTime = now;
+        normalizeLoop();
       });
 
-      function stopDragging() {
-        dragging = false;
-        viewport.classList.remove("dragging");
+      function finishPointer(event) {
+        if (!pointerDown) return;
+        if (event && event.pointerId !== pointerId) return;
+
+        pointerDown = false;
+
+        if (moved) suppressClickUntil = Date.now() + 250;
+
+        startInertia();
+        pointerId = null;
       }
 
-      viewport.addEventListener("pointerup", stopDragging);
-      viewport.addEventListener("pointercancel", stopDragging);
-      viewport.addEventListener("lostpointercapture", stopDragging);
+      viewport.addEventListener("pointerup", finishPointer);
+      viewport.addEventListener("pointercancel", finishPointer);
 
-      viewport.addEventListener("mouseenter", () => { paused = true; });
-      viewport.addEventListener("mouseleave", () => { paused = false; });
+      viewport.addEventListener("click", event => {
+        if (Date.now() < suppressClickUntil) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
 
-      viewport.addEventListener("focusin", () => { paused = true; });
-      viewport.addEventListener("focusout", () => { paused = false; });
+      viewport.addEventListener("dragstart", event => event.preventDefault());
 
-      return () => cancelAnimationFrame(animationFrame);
+      viewport.addEventListener("mouseenter", stopInertia);
+
+      // Los controles permiten recorrer una distancia mayor por toque.
+      document.querySelectorAll(`[data-scroll="${id === "videos-viewport" ? "videos" : "images"}"]`)
+        .forEach(button => {
+          button.addEventListener("click", () => {
+            const direction = Number(button.dataset.direction) || 1;
+            const distance = Math.max(viewport.clientWidth * 0.85, 220);
+
+            stopInertia();
+            viewport.scrollBy({
+              left: direction * distance,
+              behavior: prefersReducedMotion ? "auto" : "smooth"
+            });
+          });
+        });
+
+      measure();
+
+      // Se activa el bucle una vez que las imágenes tienen sus medidas.
+      if (id === "images-viewport") {
+        viewport.querySelectorAll("img").forEach(img => {
+          if (!img.complete) {
+            img.addEventListener("load", initializeLoop, { once: true });
+          }
+        });
+      }
+
+      initializeLoop();
+      window.addEventListener("resize", measure);
+      requestAnimationFrame(animate);
     }
 
-    setupCarousel("videos-viewport", "videos-track", 0.32);
-    setupCarousel("images-viewport", "images-track", 0.45);
-
-    // El sonido se activa por acción directa del visitante.
-    document.addEventListener("click", async event => {
-      const button = event.target.closest(".video-control");
-      const card = event.target.closest(".video-card");
-      const video = button
-        ? button.closest(".video-card").querySelector("video")
-        : card && event.target.closest("video");
-
-      if (!video) return;
-
-      const shouldUnmute = video.muted;
-
-      document.querySelectorAll(".video-card video").forEach(other => {
-        if (other !== video) {
-          other.muted = true;
-          const otherButton = other.closest(".video-card").querySelector(".video-control");
-          if (otherButton) {
-            otherButton.textContent = "🔇";
-            otherButton.setAttribute("aria-label", "Activar sonido del video");
-          }
-        }
-      });
-
-      video.muted = !shouldUnmute;
-
-      if (shouldUnmute) {
-        try {
-          await video.play();
-        } catch (error) {
-          video.muted = true;
-        }
-      }
-
-      const control = video.closest(".video-card").querySelector(".video-control");
-      control.textContent = video.muted ? "🔇" : "🔊";
-      control.setAttribute(
-        "aria-label",
-        video.muted ? "Activar sonido del video" : "Silenciar video"
-      );
+    setupCarousel("videos-viewport", {
+      speedMultiplier: 2.0,
+      autoSpeed: 0.12
     });
 
-    // Reintenta reproducir los videos en silencio cuando el navegador lo permita.
-    document.querySelectorAll(".video-card video").forEach(video => {
-      video.play().catch(() => {});
+    setupCarousel("images-viewport", {
+      speedMultiplier: 2.2,
+      autoSpeed: 0.17
+    });
+
+    // Reproducción y sonido: los videos comienzan en silencio.
+    // Un toque en el control activa el audio.
+    document.querySelectorAll(".video-card").forEach(card => {
+      const video = card.querySelector("video");
+      const button = card.querySelector(".video-sound");
+
+      video.muted = true;
+
+      button.addEventListener("click", async event => {
+        event.stopPropagation();
+
+        document.querySelectorAll(".video-card video").forEach(other => {
+          if (other !== video) {
+            other.muted = true;
+            const otherButton =
+              other.closest(".video-card").querySelector(".video-sound");
+            otherButton.textContent = "▶";
+            otherButton.setAttribute("aria-label", "Activar sonido");
+          }
+        });
+
+        if (video.paused) {
+          try {
+            await video.play();
+          } catch (error) {
+            // El navegador puede bloquear la reproducción automática.
+          }
+        }
+
+        video.muted = !video.muted;
+        button.textContent = video.muted ? "▶" : "🔊";
+        button.setAttribute(
+          "aria-label",
+          video.muted ? "Activar sonido" : "Silenciar video"
+        );
+      });
+
+      video.addEventListener("click", () => {
+        if (video.paused) video.play().catch(() => {});
+      });
     });
   </script>
 </body>
