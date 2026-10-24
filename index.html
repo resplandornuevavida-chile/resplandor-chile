@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#243d29">
-<meta name="description" content="Comunidad Resplandor, Isla de Maipo. Un espacio de acompañamiento, dignidad y nuevas oportunidades.">
+<meta name="description" content="Comunidad Resplandor, Isla de Maipo, Chile. Un espacio de acompañamiento, dignidad y nuevas oportunidades.">
 <title>Comunidad Resplandor | Un nuevo comienzo</title>
 
 <style>
@@ -21,7 +21,7 @@
   --serif:Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--paper);color:var(--ink);
   font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -35,33 +35,36 @@ h3{line-height:1.35}
 p{line-height:1.85}
 .eyebrow{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;
   color:var(--green);font-weight:700;margin:0 0 14px}
-.section{padding:88px 0}
-.section-heading{max-width:730px;margin-bottom:36px}
-.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:720px}
-.muted{color:var(--muted)}
+.section{padding:82px 0}
+.section-heading{max-width:760px;margin-bottom:36px}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:740px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:15px 23px;border-radius:40px;background:var(--forest);color:white;
-  font-weight:700;font-size:14px;transition:.2s}
+  padding:14px 22px;border-radius:40px;background:var(--forest);color:white;
+  font-weight:700;font-size:14px;transition:.2s;border:0}
 .btn:hover{background:var(--green);transform:translateY(-2px)}
-.btn svg,.wa-float svg{width:21px;height:21px;flex-shrink:0}
+.btn svg,.wa-float svg,.social-link svg{width:21px;height:21px;flex-shrink:0}
 
-/* LOGOTIPO Y CABECERA */
-.header{position:sticky;top:0;z-index:100;background:rgba(255,254,250,.96);
+/* CABECERA */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,254,250,.97);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.header-inner{width:min(1280px,92%);min-height:82px;margin:auto;
+.header-inner{width:min(1280px,92%);min-height:80px;margin:auto;
   display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand-symbol{width:47px;height:47px;flex-shrink:0}
-.brand-name{display:block;font-size:29px;color:var(--forest)}
+.brand-symbol{width:46px;height:46px;flex-shrink:0}
+.brand-name{display:block;font-size:28px;color:var(--forest)}
 .brand-subtitle{display:block;font-size:9px;letter-spacing:1.8px;
   color:var(--muted);margin-top:3px;text-transform:uppercase}
-.nav{display:flex;align-items:center;gap:23px}
+.nav{display:flex;align-items:center;gap:20px}
 .nav>a:not(.btn){font-size:12px;font-weight:700;color:#50584c}
 .nav>a:not(.btn):hover{color:var(--gold)}
 .menu-toggle{display:none;background:none;border:1px solid var(--line);
-  border-radius:50%;width:44px;height:44px;font-size:24px}
+  border-radius:50%;width:44px;height:44px;font-size:24px;color:var(--forest)}
 
-/* PORTADA INSPIRADA EN EL BANNER */
+/* BANNER REAL DEL REPOSITORIO */
+.banner-principal{width:100%;overflow:hidden;background:var(--forest);line-height:0}
+.banner-principal img{display:block;width:100%;height:auto;object-fit:contain}
+
+/* PORTADA */
 .hero{position:relative;isolation:isolate;overflow:hidden;color:white;
   background:linear-gradient(110deg,rgba(28,52,34,.97),rgba(47,72,43,.88) 53%,rgba(112,117,73,.64)),
   radial-gradient(ellipse at 75% 12%,#e4c36f 0%,transparent 35%),
@@ -71,28 +74,25 @@ p{line-height:1.85}
   border-radius:50% 50% 0 0;transform:rotate(-3deg)}
 .hero:after{content:"";position:absolute;z-index:-1;width:230px;height:230px;
   right:12%;top:55px;border-radius:50%;
-  background:radial-gradient(circle,#f8e7a9 0%,#d7b65e 35%,rgba(215,182,94,0) 72%);
-  opacity:.8}
-.hero-inner{padding:100px 0 125px;max-width:880px}
+  background:radial-gradient(circle,#f8e7a9 0%,#d7b65e 35%,rgba(215,182,94,0) 72%);opacity:.65}
+.hero-inner{padding:83px 0 112px;max-width:900px}
 .hero .eyebrow{color:#e7cc83}
 .hero h1{max-width:800px}
-.hero .lead{color:#f0eee4;max-width:680px;margin-bottom:29px}
+.hero .lead{color:#f0eee4;max-width:710px;margin-bottom:29px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero .btn{background:var(--gold);color:#1f3022}
 .hero .btn:hover{background:#e0c16e}
 .hero .btn-secondary{border:1px solid rgba(255,255,255,.55);background:transparent;color:white}
 .hero .btn-secondary:hover{background:rgba(255,255,255,.1)}
-.hero-note{margin:27px 0 0;color:#e7e4d5;font-size:12px;letter-spacing:.5px}
+.hero-note{margin:25px 0 0;color:#e7e4d5;font-size:12px;letter-spacing:.6px}
 
-/* EMBLEMA DECORATIVO RESPLANDOR */
-.sun-emblem{width:35px;height:35px;display:inline-grid;place-items:center;
-  border:1px solid #d6b765;border-radius:50%;color:#b18a32;
-  background:#fbf8ed;flex-shrink:0}
+/* EMBLEMA RESPLANDOR */
+.sun-emblem{width:37px;height:37px;display:inline-grid;place-items:center;
+  border:1px solid #d6b765;border-radius:50%;color:#b18a32;background:#fbf8ed;flex-shrink:0}
 .sun-emblem svg{width:24px;height:24px}
 .principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
 .principle{display:flex;align-items:flex-start;gap:17px;padding:26px;
-  border:1px solid var(--line);border-radius:18px;background:white;
-  transition:transform .2s,border-color .2s}
+  border:1px solid var(--line);border-radius:18px;background:white;transition:.2s}
 .principle:hover{transform:translateY(-3px);border-color:#d4c28e}
 .principle h3{font-size:19px;margin:3px 0 8px}
 .principle p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}
@@ -100,7 +100,7 @@ p{line-height:1.85}
 /* FILOSOFÍA */
 .soft{background:var(--cream)}
 .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.feature{padding:29px;border-radius:18px;border:1px solid #e7e1d2;background:#fffefa}
+.feature{padding:28px;border-radius:18px;border:1px solid #e7e1d2;background:#fffefa}
 .feature .sun-emblem{margin-bottom:18px}
 .feature h3{font-size:18px;margin:0 0 10px}
 .feature p{font-size:14px;color:var(--muted);margin:0;line-height:1.85}
@@ -114,29 +114,32 @@ p{line-height:1.85}
 .step h3{margin:0 0 10px;font-size:18px}
 .step p{font-size:14px;color:var(--muted);margin:0}
 
-/* VIDEOS Y FOTOGRAFÍAS */
+/* CARRUSELES */
 .carousel-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}
 .carousel-head h2{font-size:clamp(28px,4vw,39px);margin:0}
 .carousel-head .eyebrow{margin-bottom:8px}
 .controls{display:flex;gap:7px}
 .arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;
   background:white;color:var(--forest);font-size:22px;cursor:pointer}
-.track-window{overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;
-  -webkit-overflow-scrolling:touch;cursor:grab}
+.arrow:hover{border-color:var(--gold)}
+.track-window{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
+  overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
 .track-window::-webkit-scrollbar{display:none}
+.track-window.dragging{cursor:grabbing}
 .track{display:flex;align-items:stretch;gap:15px;width:max-content;padding:5px 2px 18px}
+.track>*{flex-shrink:0}
 .video-card{width:clamp(205px,25vw,270px);aspect-ratio:9/16;border-radius:17px;
   overflow:hidden;position:relative;background:#e5e7de}
-.video-card video{width:100%;height:100%;object-fit:cover;display:block}
+.video-card video{width:100%;height:100%;object-fit:cover;display:block;background:#e5e7de}
 .sound{position:absolute;right:12px;bottom:12px;width:43px;height:43px;border-radius:50%;
-  border:1px solid white;background:#243d29d9;color:white;cursor:pointer}
-.image-card{height:clamp(210px,28vw,320px);border-radius:17px;overflow:hidden;
-  background:#e9e9df}
-.image-card img{height:100%;width:auto;max-width:83vw;object-fit:contain;display:block}
+  border:1px solid white;background:#243d29e8;color:white;cursor:pointer;z-index:2}
+.image-card{height:clamp(210px,28vw,320px);border-radius:17px;overflow:hidden;background:#e9e9df}
+.image-card img{height:100%;width:auto;max-width:83vw;object-fit:contain;display:block;pointer-events:none}
 .gallery{background:var(--cream);padding:62px 0}
 .carousel-caption{font-size:12px;color:var(--muted);margin:2px 0 0}
 
-/* ORIENTACIÓN, EQUIPO Y PREGUNTAS */
+/* EQUIPO Y PREGUNTAS */
 .info-panel{padding:30px;border:1px solid var(--line);border-radius:18px;background:white}
 .info-panel p{color:var(--muted);margin-bottom:0}
 .faq{display:grid;gap:11px}
@@ -144,24 +147,41 @@ details{border:1px solid var(--line);border-radius:14px;background:white;padding
 summary{font-weight:700;cursor:pointer;line-height:1.6}
 details p{font-size:14px;color:var(--muted);margin:13px 0 0}
 
+/* REDES SOCIALES */
+.social-section{padding:48px 0;background:#f0eee4;border-top:1px solid var(--line)}
+.social-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}
+.social-copy h2{font-size:clamp(25px,3.5vw,34px);margin:0 0 8px}
+.social-copy p{color:var(--muted);margin:0;font-size:14px}
+.social-links{display:flex;flex-wrap:wrap;gap:12px}
+.social-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid #d9d5c7;border-radius:40px;padding:13px 19px;
+  font-weight:700;font-size:13px;background:#fffefa;color:var(--forest);transition:.2s}
+.social-link:hover{background:var(--forest);color:white;border-color:var(--forest)}
+.social-link.instagram svg{width:21px;height:21px}
+
 /* CONTACTO */
-.contact{background:var(--forest);color:white;text-align:center;padding:82px 0}
+.contact{background:var(--forest);color:white;text-align:center;padding:78px 0}
 .contact-inner{width:min(740px,90%);margin:auto}
 .contact .eyebrow{color:#e1c36e}
 .contact p{color:#e5e9df}
 .contact .btn{background:var(--gold);color:#233326}
 .contact .btn:hover{background:#e4c777}
-footer{padding:30px 5% 90px;text-align:center;background:#1d3222;color:#d7dfd2;font-size:12px;line-height:1.9}
+footer{padding:30px 5% 100px;text-align:center;background:#1d3222;color:#d7dfd2;font-size:12px;line-height:1.9}
 .footer-name{font:27px var(--serif);color:white;margin-bottom:7px}
 footer a{text-decoration:underline;text-underline-offset:3px}
-.wa-float{position:fixed;right:17px;bottom:17px;z-index:120;
-  display:flex;align-items:center;gap:9px;padding:14px 19px;border-radius:40px;
-  color:white;background:#187b45;box-shadow:0 7px 24px #0002;font-size:14px;font-weight:700}
+.footer-socials{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin:12px 0}
+.footer-socials a{display:inline-flex;align-items:center;gap:6px}
+.footer-socials svg{width:17px;height:17px}
+
+/* WHATSAPP FLOTANTE */
+.wa-float{position:fixed;right:17px;bottom:17px;z-index:120;display:flex;align-items:center;gap:9px;
+  padding:14px 19px;border-radius:40px;color:white;background:#187b45;
+  box-shadow:0 7px 24px #0002;font-size:14px;font-weight:700}
 .wa-float:hover{background:#12683a}
 
-@media(max-width:900px){
+@media(max-width:950px){
  .nav{gap:12px}.nav>a:not(.btn){font-size:11px}
- .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .social-inner{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:760px){
  .header-inner{min-height:72px}
@@ -173,21 +193,25 @@ footer a{text-decoration:underline;text-underline-offset:3px}
  .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0}
  .nav>a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
  .nav .btn{margin-top:14px}
- .hero-inner{padding:76px 0 108px}
- .section{padding:64px 0}
+ .hero-inner{padding:66px 0 93px}
+ .section{padding:62px 0}
  .principles,.feature-grid,.steps{grid-template-columns:1fr}
  .principle{padding:22px}
  .feature{padding:24px}
  .quote{font-size:19px}
  .video-card{width:min(72vw,270px)}
  .image-card{height:240px}
- .gallery{padding:46px 0}
- .carousel-head h2{font-size:28px}
+ .gallery{padding:45px 0}
+ .carousel-head h2{font-size:27px}
  .arrow{width:36px;height:36px}
  .wa-float{right:12px;bottom:12px;padding:13px 15px}
+ .social-section{padding:38px 0}
+ .social-links{width:100%}
+ .social-link{flex:1}
 }
 @media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}
+ html{scroll-behavior:auto}
+ *,*::before,*::after{transition:none!important}
 }
 </style>
 </head>
@@ -209,11 +233,14 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   </a>
   <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   <nav class="nav" id="main-nav">
-   <a href="#nosotros">Nosotros</a><a href="#filosofia">Filosofía</a>
-   <a href="#proceso">Proceso personal</a><a href="#galeria">Nuestra comunidad</a>
+   <a href="#nosotros">Nosotros</a>
+   <a href="#filosofia">Filosofía</a>
+   <a href="#proceso">Proceso personal</a>
+   <a href="#galeria">Nuestra comunidad</a>
+   <a href="#redes">Redes sociales</a>
    <a href="#preguntas">Preguntas frecuentes</a>
    <a class="btn" href="https://wa.me/56966211459" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Zm5.3-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5-.1-.2-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
     WhatsApp
    </a>
   </nav>
@@ -221,6 +248,11 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 </header>
 
 <main>
+<!-- BANNER: archivo banner.jpeg en la raíz del repositorio -->
+<section class="banner-principal" aria-label="Banner de Comunidad Resplandor">
+ <img src="banner.jpeg" alt="Comunidad Resplandor: un espacio para comenzar de nuevo, Isla de Maipo, Chile" fetchpriority="high">
+</section>
+
 <section class="hero" id="inicio">
  <div class="container hero-inner">
   <p class="eyebrow">Comunidad Resplandor · Isla de Maipo</p>
@@ -228,7 +260,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <p class="lead">Cada historia merece ser escuchada. Creemos en la dignidad de cada persona, en la posibilidad de cambiar y en el valor de avanzar paso a paso, con orientación y acompañamiento.</p>
   <div class="hero-actions">
    <a class="btn" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20Comunidad%20Resplandor." target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Zm5.3-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5-.1-.2-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8-0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6a9.7 9.7 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
     Solicitar orientación
    </a>
    <a class="btn btn-secondary" href="#nosotros">Conocer Resplandor</a>
@@ -244,29 +276,16 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <p class="lead">Comunidad Resplandor nació para brindar apoyo a personas que enfrentan dificultades relacionadas con el consumo de alcohol y otras drogas. Nuestro propósito es ofrecer un espacio de contención y aprendizaje, donde sea posible reconocer las dificultades, desarrollar herramientas y construir nuevas formas de relacionarse consigo mismo y con el entorno.</p>
  </div>
  <div class="principles">
-  <article class="principle">
-   <span class="sun-emblem" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span>
-   <div><h3>Dignidad</h3><p>Toda persona merece ser tratada con humanidad, sin quedar definida por sus dificultades. Reconocer su valor es el punto de partida para construir nuevas oportunidades.</p></div>
-  </article>
-  <article class="principle">
-   <span class="sun-emblem" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span>
-   <div><h3>Respeto</h3><p>Escuchar cada historia con empatía y sin prejuicios permite comprender mejor las necesidades de cada persona y abrir un espacio para conversar con confianza.</p></div>
-  </article>
-  <article class="principle">
-   <span class="sun-emblem" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span>
-   <div><h3>Compromiso</h3><p>Los cambios significativos se construyen con constancia, responsabilidad y aprendizaje. Cada paso puede ayudar a desarrollar nuevas herramientas para afrontar las dificultades.</p></div>
-  </article>
-  <article class="principle">
-   <span class="sun-emblem" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span>
-   <div><h3>Esperanza</h3><p>El pasado no tiene que ser el único horizonte. Con apoyo, reflexión y nuevas herramientas, es posible explorar otras maneras de vivir y relacionarse.</p></div>
-  </article>
+  <article class="principle"><span class="sun-emblem"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span><div><h3>Dignidad</h3><p>Toda persona merece ser tratada con humanidad, sin quedar definida por sus dificultades. Reconocer su valor es el punto de partida para construir nuevas oportunidades.</p></div></article>
+  <article class="principle"><span class="sun-emblem"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span><div><h3>Respeto</h3><p>Escuchar cada historia con empatía y sin prejuicios permite comprender mejor las necesidades de cada persona y abrir un espacio para conversar con confianza.</p></div></article>
+  <article class="principle"><span class="sun-emblem"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span><div><h3>Compromiso</h3><p>Los cambios significativos se construyen con constancia, responsabilidad y aprendizaje. Cada paso puede ayudar a desarrollar nuevas herramientas para afrontar las dificultades.</p></div></article>
+  <article class="principle"><span class="sun-emblem"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span><div><h3>Esperanza</h3><p>El pasado no tiene que ser el único horizonte. Con apoyo, reflexión y nuevas herramientas, es posible explorar otras maneras de vivir y relacionarse.</p></div></article>
  </div>
 </section>
 
 <section class="section soft" id="filosofia">
  <div class="container">
-  <div class="section-heading">
-   <p class="eyebrow">Nuestra filosofía</p>
+  <div class="section-heading"><p class="eyebrow">Nuestra filosofía</p>
    <h2>Una persona es mucho más que el momento difícil que está viviendo.</h2>
    <p class="lead">El consumo problemático puede afectar la salud, los vínculos y la vida cotidiana. Por eso, acercarse a la recuperación implica mirar a la persona en su contexto, reconocer sus capacidades y considerar también la importancia de sus relaciones y su entorno.</p>
   </div>
@@ -280,8 +299,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 </section>
 
 <section class="section container" id="proceso">
- <div class="section-heading">
-  <p class="eyebrow">Proceso personal</p>
+ <div class="section-heading"><p class="eyebrow">Proceso personal</p>
   <h2>Un camino que comienza con una conversación.</h2>
   <p class="lead">Pedir información puede ser un primer paso importante, tanto para la persona que busca ayuda como para su familia. Conversar permite conocer la situación, resolver dudas y comprender qué alternativas pueden ser adecuadas.</p>
  </div>
@@ -291,22 +309,26 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <article class="step"><span class="sun-emblem"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg></span><h3>Conocer los próximos pasos</h3><p>Consultar por los requisitos de ingreso y la disponibilidad permite tomar decisiones informadas sobre cómo continuar.</p></article>
  </div>
  <p style="margin-top:25px"><a class="btn" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20proceso%20de%20ingreso." target="_blank" rel="noopener">
- <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8A11.8 11.8 0 0 0 12.1 0ZM12.1 21.6a9.7 9.7 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
  Consultar por WhatsApp</a></p>
 </section>
 
 <section class="gallery" id="galeria">
  <div class="container">
-  <div class="carousel-head"><div><p class="eyebrow">Nuestra comunidad</p><h2>Conoce Resplandor</h2></div><div class="controls"><button class="arrow" data-target="videos" data-dir="-1" aria-label="Videos anteriores">‹</button><button class="arrow" data-target="videos" data-dir="1" aria-label="Más videos">›</button></div></div>
+  <div class="carousel-head"><div><p class="eyebrow">Nuestra comunidad</p><h2>Conoce Resplandor</h2></div>
+   <div class="controls"><button class="arrow" data-target="videos" data-dir="-1" aria-label="Videos anteriores">‹</button><button class="arrow" data-target="videos" data-dir="1" aria-label="Más videos">›</button></div>
+  </div>
   <div class="track-window" id="videos-window"><div class="track">
    <div class="video-card"><video src="video%201.mp4" muted loop playsinline preload="metadata"></video><button class="sound" aria-label="Activar sonido">▶</button></div>
    <div class="video-card"><video src="video%202.mp4" muted loop playsinline preload="metadata"></video><button class="sound" aria-label="Activar sonido">▶</button></div>
    <div class="video-card"><video src="video%203.mp4" muted loop playsinline preload="metadata"></video><button class="sound" aria-label="Activar sonido">▶</button></div>
   </div></div>
-  <p class="carousel-caption">Desliza para explorar los videos.</p>
+  <p class="carousel-caption">Desliza con el dedo para explorar los videos.</p>
  </div>
  <div class="container" style="margin-top:42px">
-  <div class="carousel-head"><div><p class="eyebrow">Espacios y momentos</p><h2>Un vistazo a la comunidad</h2></div><div class="controls"><button class="arrow" data-target="images" data-dir="-1" aria-label="Imágenes anteriores">‹</button><button class="arrow" data-target="images" data-dir="1" aria-label="Más imágenes">›</button></div></div>
+  <div class="carousel-head"><div><p class="eyebrow">Espacios y momentos</p><h2>Un vistazo a la comunidad</h2></div>
+   <div class="controls"><button class="arrow" data-target="images" data-dir="-1" aria-label="Imágenes anteriores">‹</button><button class="arrow" data-target="images" data-dir="1" aria-label="Más imágenes">›</button></div>
+  </div>
   <div class="track-window" id="images-window"><div class="track">
    <div class="image-card"><img src="imagen%201.jpeg" alt="Comunidad Resplandor, fotografía 1" loading="lazy"></div>
    <div class="image-card"><img src="imagen%202.jpeg" alt="Comunidad Resplandor, fotografía 2" loading="lazy"></div>
@@ -317,7 +339,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
    <div class="image-card"><img src="imagen%207.jpeg" alt="Comunidad Resplandor, fotografía 7" loading="lazy"></div>
    <div class="image-card"><img src="imagen%208.jpeg" alt="Comunidad Resplandor, fotografía 8" loading="lazy"></div>
   </div></div>
-  <p class="carousel-caption">Desliza para ver las fotografías.</p>
+  <p class="carousel-caption">Desliza con el dedo para ver las fotografías.</p>
  </div>
 </section>
 
@@ -326,7 +348,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
  <h2>Acompañar también puede comenzar por informarse.</h2>
  <p class="lead">Cuando una persona cercana atraviesa dificultades con el consumo, pueden surgir preocupación, dudas y sentimientos difíciles. Buscar información confiable puede ayudar a comprender mejor la situación y explorar cómo dar los siguientes pasos.</p></div>
  <a class="btn" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20orientaci%C3%B3n%20para%20un%20familiar." target="_blank" rel="noopener">
- <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8A11.8 11.8 0 0 0 12.1 0ZM12.1 21.6a9.7 9.7 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
  Solicitar orientación</a>
 </section>
 
@@ -341,13 +363,35 @@ footer a{text-decoration:underline;text-underline-offset:3px}
  </div></div>
 </section>
 
+<!-- ACCESOS DIRECTOS A INSTAGRAM Y FACEBOOK -->
+<section class="social-section" id="redes">
+ <div class="container social-inner">
+  <div class="social-copy">
+   <p class="eyebrow">Síguenos</p>
+   <h2>Conecta con Resplandor</h2>
+   <p>Conoce nuestras publicaciones y novedades en redes sociales.</p>
+  </div>
+  <div class="social-links">
+   <a class="social-link instagram" href="https://www.instagram.com/comunidad.resplandor?srtk=dGcxaHJmN2xyODE4" target="_blank" rel="noopener" aria-label="Visitar Instagram de Comunidad Resplandor">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    Instagram
+   </a>
+   <a class="social-link" href="https://www.facebook.com/share/1CM4XUVQPJ/" target="_blank" rel="noopener" aria-label="Visitar Facebook de Comunidad Resplandor">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.09 4.39 23.08 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.71 4.54-4.71 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.08 24 18.09 24 12.07Z"/></svg>
+    Facebook
+   </a>
+  </div>
+ </div>
+</section>
+
 <section class="contact" id="contacto">
  <div class="contact-inner"><p class="eyebrow">Comunidad Resplandor · Isla de Maipo</p>
  <h2>Un nuevo comienzo puede empezar con una conversación.</h2>
- <p>Estamos disponibles para recibir tu consulta y orientarte sobre la información del centro y los pasos a seguir.</p>
+ <p>Contacta con nosotros para solicitar información sobre el centro y conocer los pasos a seguir.</p>
  <a class="btn" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20Comunidad%20Resplandor." target="_blank" rel="noopener">
- <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
- Hablar por WhatsApp</a></div>
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8A11.8 11.8 0 0 0 12.1 0ZM12.1 21.6a9.7 9.7 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
+ Hablar por WhatsApp</a>
+ </div>
 </section>
 </main>
 
@@ -356,45 +400,193 @@ footer a{text-decoration:underline;text-underline-offset:3px}
  <p>San Martirian #657, Las Mercedes, Isla de Maipo, Chile</p>
  <p>WhatsApp: <a href="https://wa.me/56966211459">+56 9 6621 1459</a></p>
  <p>Correo: <a href="mailto:Nivelesresplandor@gmail.com">Nivelesresplandor@gmail.com</a></p>
+ <div class="footer-socials">
+  <a href="https://www.instagram.com/comunidad.resplandor?srtk=dGcxaHJmN2xyODE4" target="_blank" rel="noopener">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg> Instagram
+  </a>
+  <a href="https://www.facebook.com/share/1CM4XUVQPJ/" target="_blank" rel="noopener">
+   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.09 4.39 23.08 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.71 4.54-4.71 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.08 24 18.09 24 12.07Z"/></svg> Facebook
+  </a>
+ </div>
  <p>© <span id="year"></span> Comunidad Resplandor.</p>
 </footer>
 
 <a class="wa-float" href="https://wa.me/56966211459?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Comunidad%20Resplandor." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
- <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Zm5.3-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5-.1-.2-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4Z"/></svg>
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8A11.8 11.8 0 0 0 12.1 0ZM12.1 21.6a9.7 9.7 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Z"/></svg>
  WhatsApp
 </a>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
+
+/* Menú móvil */
 const menu=document.getElementById("main-nav");
 const toggle=document.getElementById("menu-toggle");
 toggle.addEventListener("click",()=>{
  const open=menu.classList.toggle("open");
  toggle.setAttribute("aria-expanded",String(open));
+ toggle.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");
  toggle.textContent=open?"×":"☰";
 });
 menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
- menu.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.textContent="☰";
+ menu.classList.remove("open");
+ toggle.setAttribute("aria-expanded","false");
+ toggle.setAttribute("aria-label","Abrir menú");
+ toggle.textContent="☰";
 }));
 
-document.querySelectorAll('[data-target]').forEach(btn=>{
- btn.addEventListener("click",()=>{
-  const windowId=btn.dataset.target==="videos"?"videos-window":"images-window";
-  const view=document.getElementById(windowId);
-  view.scrollBy({left:Number(btn.dataset.dir)*view.clientWidth*.8,behavior:"smooth"});
- });
-});
+/* Loop continuo, arrastre táctil y controles manuales */
+function iniciarCarrusel(windowId,tipo,velocidad){
+ const viewport=document.getElementById(windowId);
+ if(!viewport)return;
+ const track=viewport.querySelector(".track");
+ if(!track)return;
 
-document.querySelectorAll(".video-card").forEach(card=>{
- const video=card.querySelector("video"),button=card.querySelector(".sound");
- button.addEventListener("click",async()=>{
-  document.querySelectorAll(".video-card video").forEach(other=>{
-   if(other!==video){other.muted=true;other.pause();other.closest(".video-card").querySelector(".sound").textContent="▶";}
+ const originales=Array.from(track.children);
+ if(!originales.length)return;
+
+ // Las copias crean la continuidad visual al llegar al final.
+ originales.forEach(elemento=>{
+  const copia=elemento.cloneNode(true);
+  copia.classList.add("copia-loop");
+  copia.setAttribute("aria-hidden","true");
+  copia.querySelectorAll("button").forEach(b=>b.remove());
+  copia.querySelectorAll("video").forEach(v=>{
+   v.muted=true;
+   v.setAttribute("muted","");
+   v.setAttribute("playsinline","");
+   v.removeAttribute("autoplay");
   });
-  if(video.paused){try{await video.play()}catch(e){}}
+  track.appendChild(copia);
+ });
+
+ let mitad=0,arrastrando=false,inicioX=0,scrollInicio=0;
+ let ultimaX=0,ultimoTiempo=0,velocidadDedo=0;
+ let huboMovimiento=false,bloquearClickHasta=0;
+ let animacionAnterior=0,inerciaActual=0,rafInercia=0;
+ const reducir=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+ function medir(){mitad=track.scrollWidth/2}
+ function normalizar(){
+  if(!mitad)return;
+  if(viewport.scrollLeft>=mitad)viewport.scrollLeft-=mitad;
+  if(viewport.scrollLeft<0)viewport.scrollLeft+=mitad;
+ }
+ function detenerInercia(){
+  if(rafInercia)cancelAnimationFrame(rafInercia);
+  rafInercia=0;
+ }
+ function animar(tiempo){
+  if(!animacionAnterior)animacionAnterior=tiempo;
+  const dt=Math.min(tiempo-animacionAnterior,35);
+  animacionAnterior=tiempo;
+  if(!arrastrando&&!reducir&&!document.hidden){
+   viewport.scrollLeft+=velocidad*dt;
+   normalizar();
+  }
+  requestAnimationFrame(animar);
+ }
+
+ viewport.addEventListener("pointerdown",e=>{
+  if(e.target.closest("button"))return;
+  if(e.pointerType==="mouse"&&e.button!==0)return;
+  detenerInercia();
+  arrastrando=true;
+  huboMovimiento=false;
+  inicioX=e.clientX;
+  ultimaX=e.clientX;
+  scrollInicio=viewport.scrollLeft;
+  ultimoTiempo=performance.now();
+  velocidadDedo=0;
+  viewport.classList.add("dragging");
+ });
+
+ viewport.addEventListener("pointermove",e=>{
+  if(!arrastrando)return;
+  const desplazamiento=e.clientX-inicioX;
+  if(Math.abs(desplazamiento)>4)huboMovimiento=true;
+  viewport.scrollLeft=scrollInicio-desplazamiento;
+  const ahora=performance.now();
+  velocidadDedo=(e.clientX-ultimaX)/Math.max(1,ahora-ultimoTiempo);
+  ultimaX=e.clientX;
+  ultimoTiempo=ahora;
+  normalizar();
+ });
+
+ function terminar(){
+  if(!arrastrando)return;
+  arrastrando=false;
+  viewport.classList.remove("dragging");
+  if(huboMovimiento)bloquearClickHasta=Date.now()+220;
+  if(reducir||Math.abs(velocidadDedo)<.02)return;
+
+  inerciaActual=-velocidadDedo*11;
+  detenerInercia();
+  let anterior=0;
+  function deslizar(t){
+   if(arrastrando)return;
+   if(!anterior)anterior=t;
+   const dt=Math.min(t-anterior,30);
+   anterior=t;
+   viewport.scrollLeft+=inerciaActual*dt;
+   normalizar();
+   inerciaActual*=Math.pow(.90,dt/16.67);
+   if(Math.abs(inerciaActual)>.025)rafInercia=requestAnimationFrame(deslizar);
+   else rafInercia=0;
+  }
+  rafInercia=requestAnimationFrame(deslizar);
+ }
+
+ viewport.addEventListener("pointerup",terminar);
+ viewport.addEventListener("pointercancel",terminar);
+ viewport.addEventListener("click",e=>{
+  if(Date.now()<bloquearClickHasta){
+   e.preventDefault();
+   e.stopPropagation();
+  }
+ },true);
+
+ document.querySelectorAll(`[data-target="${tipo}"]`).forEach(boton=>{
+  boton.addEventListener("click",()=>{
+   detenerInercia();
+   viewport.scrollBy({
+    left:Number(boton.dataset.dir||1)*viewport.clientWidth*.8,
+    behavior:reducir?"auto":"smooth"
+   });
+  });
+ });
+
+ // Si el usuario toca o pasa el ratón, el loop sigue funcionando;
+ // el arrastre lo pausa solo mientras mantiene el dedo presionado.
+ medir();
+ window.addEventListener("resize",medir);
+ requestAnimationFrame(animar);
+}
+
+iniciarCarrusel("videos-window","videos",0.035);
+iniciarCarrusel("images-window","images",0.025);
+
+/* Botones de sonido de los videos originales */
+document.querySelectorAll("#videos-window .video-card").forEach(card=>{
+ const video=card.querySelector("video");
+ const boton=card.querySelector(".sound");
+ if(!video||!boton)return;
+ video.muted=true;
+ boton.addEventListener("click",async e=>{
+  e.stopPropagation();
+  document.querySelectorAll("#videos-window .video-card video").forEach(otro=>{
+   if(otro!==video){
+    otro.muted=true;
+    const b=otro.closest(".video-card").querySelector(".sound");
+    if(b)b.textContent="▶";
+   }
+  });
+  if(video.paused){
+   try{await video.play()}catch(error){return}
+  }
   video.muted=!video.muted;
-  button.textContent=video.muted?"▶":"🔊";
-  button.setAttribute("aria-label",video.muted?"Activar sonido":"Silenciar video");
+  boton.textContent=video.muted?"▶":"🔊";
+  boton.setAttribute("aria-label",video.muted?"Activar sonido":"Silenciar video");
  });
 });
 </script>
